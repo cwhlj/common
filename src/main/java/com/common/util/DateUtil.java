@@ -13,11 +13,9 @@ import java.util.*;
 /**
  * 时间处理工具类
  *
- * @author Huang Zhigang
  */
 public class DateUtil {
     private static final Log logger = LogFactory.getLog(DateUtil.class);
-    public static String DATE_REGEXP = "^[1-2]\\d{3}(\\-\\d{1,2}){2}( (\\d{1,2}:){2}\\d{1,2})?";
     private static final int MODIFY_TRUNCATE = 0;
     private static final int MODIFY_ROUND = 1;
     private static final int MODIFY_CEILING = 2;
