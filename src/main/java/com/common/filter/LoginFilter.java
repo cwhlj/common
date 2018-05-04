@@ -9,10 +9,12 @@ import java.io.IOException;
  * @date 2018/4/27 14:11
  */
 public final class LoginFilter implements Filter{
+    @Override
     public void init(FilterConfig filterConfig) throws ServletException {
 
     }
 
+    @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
         //因为request.getInputStream()只能读一次.所以这里封装一个wrapper类,将post提交的数据封装起来.
         ServletRequest requestWrapper = null;
@@ -27,6 +29,7 @@ public final class LoginFilter implements Filter{
 
     }
 
+    @Override
     public void destroy() {
 
     }

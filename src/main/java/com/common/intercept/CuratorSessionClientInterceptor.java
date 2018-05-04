@@ -27,6 +27,7 @@ public final class CuratorSessionClientInterceptor implements HandlerInterceptor
 	/**
 	 * 拦截器，如用户登录失效则返回失效信息
 	 */
+	@Override
 	public boolean preHandle(HttpServletRequest request,
 	                         HttpServletResponse response, Object handler) throws Exception {
 //		//api header检查
@@ -95,11 +96,13 @@ public final class CuratorSessionClientInterceptor implements HandlerInterceptor
 		return true;
 	}
 
+	@Override
 	public void afterCompletion(HttpServletRequest arg0,
 	                            HttpServletResponse arg1, Object arg2, Exception arg3)
 			throws Exception {
 	}
 
+	@Override
 	public void postHandle(HttpServletRequest request,
 	                       HttpServletResponse response, Object handler,
 	                       ModelAndView modelAndView) throws Exception {

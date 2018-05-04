@@ -799,6 +799,7 @@ public class DateUtil {
          *
          * @return <code>true</code> if the iterator has yet to reach the end date
          */
+        @Override
 		public boolean hasNext() {
             return spot.before(endFinal);
         }
@@ -808,6 +809,7 @@ public class DateUtil {
          *
          * @return Object calendar for the next date
          */
+        @Override
 		public Object next() {
             if (spot.after(endFinal)) {
                 throw new NoSuchElementException();
@@ -832,6 +834,7 @@ public class DateUtil {
          * @throws UnsupportedOperationException
          * @see java.util.Iterator#remove()
          */
+        @Override
 		public void remove() {
             throw new UnsupportedOperationException();
         }
