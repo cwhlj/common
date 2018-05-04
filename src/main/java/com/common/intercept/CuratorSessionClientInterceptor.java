@@ -1,28 +1,24 @@
 package com.common.intercept;
 
+import com.common.dao.RedisHelper;
 import com.common.util.CodecUtils;
-import com.common.util.DateUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.util.StringUtils;
 import org.springframework.web.servlet.HandlerInterceptor;
-import org.springframework.web.servlet.LocaleResolver;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.support.RequestContextUtils;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.Locale;
 
 public final class CuratorSessionClientInterceptor implements HandlerInterceptor {
 	private static Logger logger = LoggerFactory.getLogger(CuratorSessionClientInterceptor.class);
 
 
 	public static final String DEFAULT_PARAM_NAME = "locale";
-//	@Resource
-//	private RedisHelper redisHelper;
+	@Resource
+	private RedisHelper redisHelper;
 	@Resource
 	private CustomObjectMapper customObjectMapper;
 
